@@ -65,7 +65,7 @@
 		 <!-- start header menu -->
 		 <ul class="megamenu skyblue">
 			 <li class="active grid"><a class="color1" href="index.php">Home</a></li>
-			 <li class="grid"><a class="color2" href="#">furniture</a>
+                         <li class="grid"><a class="color2" href="products.php">furniture</a>
 				<div class="megapanel" style="width: 25%;">
 					<div class="row">
 						<div class="col1">
