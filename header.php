@@ -70,17 +70,17 @@
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<a href="category.php?type=sofa"><h4>Sofas</h4></a>
+								<a href="products.php?type=sofa"><h4>Sofas</h4></a>
 							</div>							
 						
 							<div class="h_nav">
-								<a href="category.php?type=table"><h4>Tables</h4></a>
+								<a href="products.php?type=table"><h4>Tables</h4></a>
 							</div>							
 							<div class="h_nav">
-								<a href="category.php?type=bed"><h4>Beds</h4></a>
+								<a href="products.php?type=bed"><h4>Beds</h4></a>
 							</div>												
 							<div class="h_nav">
-								<a href="category.php?type=wardrobe"><h4>Wardrobe</h4></a>
+								<a href="products.php?type=wardrobe"><h4>Wardrobe</h4></a>
 							</div>						
 						</div>
 				</div>

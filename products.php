@@ -40,23 +40,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </ol>
 			<h2>OUR PRODUCTS</h2>			
 		 <div class="col-md-9 product-model-sec">
-					 <a href="single.html"><div class="product-grid love-grid">
+
+		 <?php
+
+    		require('dbConnection.php');
+    		$qry="SELECT Item_type,Item_id,Price,Number,Title from items";
+    		$result=mysqli_query($connect,$qry)or die(mysqli_error($connect));
+
+    		while($row = mysqli_fetch_assoc($result)) {
+		        ?>
+
+		         <div class="product-grid love-grid">
+						<div class="more-product"><span> </span></div>						
+						<div class="product-img b-link-stripe b-animate-go  thickbox">
+							<img src="images/products/<?= $row['Item_id'] ?>.jpg" class="img-responsive" alt=""/>
+						</div>					
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust prt_name">
+								<h4><?= $row['Title']; ?></h4>
+								<p>ID: <?= $row['Item_id']; ?></p>
+								<span class="item_price">Rs. <?= $row['Price']; ?></span>		<br>	
+								<?php
+									if($row['Number']==0) {
+										?>
+										<h4>Out Of Stock</h4>
+										<?php	
+									} else if(isset($_SESSION['username']) ) {
+								?>		
+								<input type="button" class="item_add items" value="Buy Now">
+								<?php
+									} else {
+								?>
+								<a href="login.php" class="item_add items" >Login to Buy</a>
+								
+								<?php
+									}
+								?>
+							</div>													
+							<div class="clearfix"> </div>
+						</div>
+					</div>	
+					
+
+		        <?php
+				    }
+				 ?>
+					 <div class="product-grid love-grid">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
 							<img src="images/p1.jpg" class="img-responsive" alt=""/>
-							<div class="b-wrapper">
-							<h4 class="b-animate b-from-left  b-delay03">							
-							<button class="btns"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</button>
-							</h4>
-							</div>
-						</div></a>						
+						</div>					
 						<div class="product-info simpleCart_shelfItem">
 							<div class="product-info-cust prt_name">
 								<h4>5 Seater sofa set</h4>
 								<p>ID: SR4598</p>
-								<span class="item_price">$187.95</span>								
-								<input type="text" class="item_quantity" value="1" />
-								<input type="button" class="item_add items" value="ADD">
+								<span class="item_price">$187.95</span>		<br>			
+								<input type="button" class="item_add items" value="Buy Now">
 							</div>													
 							<div class="clearfix"> </div>
 						</div>
