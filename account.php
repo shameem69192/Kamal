@@ -31,109 +31,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!-- header -->
 <!-- header -->
-<div class="top_bg">
-	<div class="container">
-		<div class="header_top-sec">
-			<div class="top_right">
-				<ul>
-					
-					<li><a href="contact.html">Contact</a></li>
-					
-				</ul>
-			</div>
-			<div class="top_left">
-				<ul>
-					<li class="top_link">Email:<a href="mailto@example.com">info(at)Mobilya.com</a></li>|
-					<li class="top_link"><a href="login.html">My Account</a></li>					
-				</ul>
-				
-			</div>
-				<div class="clearfix"> </div>
-		</div>
-	</div>
-</div>
-<div class="header_top">
-	 <div class="container">
-		 <div class="logo">
-		 	<a href="index.html"><img src="images/logo.png" alt=""/></a>			 
-		 </div>
-		 <div class="header_right">	
-			 <div class="login">
-				 <a href="login.php">LOGIN</a>
-			 </div>
-			 			 
-		 </div>
-		  <div class="clearfix"></div>	
-	 </div>
-</div>
-<!--cart-->
-	 
-<!------>
-<div class="mega_nav">
-	 <div class="container">
-		 <div class="menu_sec">
-		 <!-- start header menu -->
-		 <ul class="megamenu skyblue">
-			 <li class="active grid"><a class="color1" href="index.html">Home</a></li>
-                         <li class="grid"><a class="color2" href="products.html">furniture</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sofas</h4>
-									
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Tables</h4>
-									
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Beds</h4>
-								
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Wardrobe</h4>
-									
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-									
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>
-			<li><a class="color4" href="contact.html">contact us</a>
-				
-				</li>				
-				<li><a class="color5" href="#">about</a>
-				
-				</li>
-						
-			   </ul> 
-			   
-			 <div class="clearfix"></div>
-		 </div>
-	  </div>
-</div>
+
+
+<?php require('header.php'); ?>
 <!---->
 <div class="container">
 	  <ol class="breadcrumb">
-		  <li><a href="index.html">Home</a></li>
+		  <li><a href="index.php">Home</a></li>
 		  <li class="active">Account</li>
 		 </ol>
 	 <div class="registration">
@@ -245,38 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- /Form -->
 			 </div>
 		 </div>
-             <!--
-		 <div class="registration_left">
-			 <h2>existing user</h2>
-			 <div class="registration_form">
-
-				<form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?>" method="post">
-					<div>
-						<label>
-                                                    <input placeholder="email:" type="text" name="email" value="<?=$email?>" tabindex="8">
-                                                    <?php
-                                                    if(isset($_POST['sign in']))
-                                                    {
-                                                    echo"<span class='error'>".$email_error."</span>";}?>
-                                                </label>
-					</div>
-					<div>
-						<label>
-							<input placeholder="password" type="password" name="pass1" tabindex="9">
-                                                        <span class="error"><?= $pass1_error ?></span>
-						</label>
-					</div>
-					<div>
-						<input type="submit" value="sign in" id="register-submit">
-					</div>
-					<div class="forget">
-						<a href="#">forgot your password</a>
-					</div>
-				</form>
-
-			 </div>
-		 </div>
-             --> 
+          
 		 <div class="clearfix"></div>
 	 </div>
 </div>
@@ -288,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <h4>About Us</h4>
 				 <ul>
 					 <li><a href="#">Who We Are</a></li>
-					 <li><a href="contact.html">Contact Us</a></li>
+					 <li><a href="contact.php">Contact Us</a></li>
 					
 					
 					 <li><a href="#">Team</a></li>

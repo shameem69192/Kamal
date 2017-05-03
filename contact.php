@@ -1,11 +1,8 @@
-<?php session_start(); ?>
-<?php
- require 'account_login.php';
-?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Kamal Futnitures</title>
+<title>kamal furnitures</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
 <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
@@ -27,56 +24,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="js/menu_jquery.js"></script>
 <script src="js/simpleCart.min.js"> </script>
+  <script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+  </script>
   
 </head>
 <body>
+<!-- header -->
 
 <?php require('header.php'); ?>
-<!---->
-<div class="login_sec">
+
+<div class="contact">
 	 <div class="container">
 		 <ol class="breadcrumb">
 		  <li><a href="index.php">Home</a></li>
-		  <li class="active">Login</li>
+		  <li class="active">Contact</li>
 		 </ol>
-		 <h2>Login</h2>
-                     <?php
-                         if(isset($_SESSION['message']))
-                         {
-                          echo"<div id='error_msg'>".$_SESSION['message']."</div>";
-                          unset($_SESSION['message']);
-                         }
-                         ?>
-		 <div class="col-md-6 log">			 
-				 <p>Welcome, please enter the filling to continue.</p>
-				 <!--<p>If you have previously Login with us, <span>click here</span></p>-->
-                                 <form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?> " method="post">
-                                     <div>
-                                         <label>
-                                         <!--<h5>Email:</h5>-->
-                                         <input placeholder="Email:" type="text" name="email" value="<?=$email?>" tabindex="1">
-                                         <span class="error"><?= $email_error ?></span>
-                                         </label>
-                                     </div>    
-                                     <div>
-                                         <label>
-					 <!--<h5>Password:</h5>-->
-                                         <input placeholder="Password:" type="password" name="pass1" tabindex="2">	
-                                         <span class="error"><?= $pass1_error ?></span>
-                                         </label>
-                                     </div>
-					 <input type="submit" value="Login">
-					  <a href="#">Forgot Password ?</a>
-				 </form>				 
+		 <div class="contact-head">
+		 	 <h2>CONTACT</h2>
+			  <form>
+				  <div class="col-md-6 contact-left">
+						<input type="text" placeholder="Name" required/>
+						<input type="text" placeholder="E-mail" required/>
+						<input type="text" placeholder="Phone" required/>
+				 </div>
+				 <div class="col-md-6 contact-right">
+						 <textarea placeholder="Message"></textarea>
+						 <input type="submit" value="SEND"/>
+				 </div>
+				 <div class="clearfix"></div>
+			 </form>
 		 </div>
-		  <div class="col-md-6 login-right">
-			  	<h3>NEW REGISTRATION</h3>
-				<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-				<a class="acount-btn" href="account.php">Create an Account</a>
-		 </div>
-		 <div class="clearfix"></div>
-	 </div>
-</div>
+		 
 <!---->
 <div class="footer-content">
 	 <div class="container">
@@ -87,6 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="#">Who We Are</a></li>
 					 <li><a href="contact.php">Contact Us</a></li>
 					 
+					
 					 <li><a href="#">Team</a></li>
 					 					 
 				 </ul>
@@ -98,7 +88,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="account.html">Your Account</a></li>
 					 <li><a href="#">Personal Information</a></li>
 					 <li><a href="#">Addresses</a></li>
-					 				 					 
+					 
+					 					 					 
 				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
@@ -109,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="#">> Tables</a></li>
 					 <li><a href="#">> Beds</a></li>
 					 <li><a href="#">> Wardrobe</a></li>
-					 					 
+										 
 				 </ul>
 			 </div>
 			 <div class="clearfix"></div>
@@ -117,13 +108,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
 </div>
 <!---->
-	 
-		 <div class="copywrite">
-			 <p>Copyright © 2017 kamal Furnitures All rights reserved| Design by sss</p>
-		 </div>			 
-		 
-	 
 
+		 <div class="copywrite">
+			 <p>Copyright © 2017 Kamal Furnitures All rights reserved| Design by sss</p>
+		 </div>			 
+		 </div>
+	 </div>
+</div>
 <!---->
 </body>
 </html>

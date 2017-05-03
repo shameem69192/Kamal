@@ -1,11 +1,11 @@
 <?php
-session_start();
-$host="localhost";$username="root";$password="";$db="usr";
-$connect=mysqli_connect($host,$username,$password,$db)or die(mysqli_connect_error());
+
 $email=$pass1="";
 $email_error=$pass1_error="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
+
+    require('dbConnection.php');
     if (empty($_POST["email"]))
         {
          $email_error = "Email is required";
@@ -32,15 +32,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $res=mysqli_query($connect,$qry)or die(mysqli_error($connect));
     if(mysqli_num_rows($res)==1)
     {
-      $fname="SELECT Fname from cust_details WHERE Email='$email' AND Password='$pass1' ";
+      $fquery="SELECT Fname from cust_details WHERE Email='$email' AND Password='$pass1' ";
+      $res=mysqli_query($connect,$fquery)or die(mysqli_error($connect));
+
       $_SESSION['message']="you are now logged in";
-      $_SESSION['username']=$fname;
-      header("Location:products.html");
+      $_SESSION['username']=mysqli_fetch_assoc($res)["Fname"];
+      header("Location:products.php");
 
     }
     else
     {
-    $_SESSION['message']="Invalid username or password!!!";
+      $_SESSION['message']="Invalid username or password!!!";
     }    
 }
 function test_input($data)

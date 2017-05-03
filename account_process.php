@@ -1,52 +1,59 @@
 <?php
 session_start();
-$host="localhost";$username="root";$password="";$db="usr";
-$connect=mysqli_connect($host,$username,$password,$db)or die(mysqli_connect_error());
+require('dbConnection.php');
 $fname_error=$lname_error=$email_error=$mobile_error=$gender_error=$pass1_error=$pass2_error="";
 $fname=$lname=$email=$mobile=$gender=$pass1=$pass2="";
+$anyError = false;
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     if (empty($_POST["fname"]))
       {
         $fname_error = "First name is required";
+        $anyError = true;
       }
     else
     {
       $fname = test_input($_POST["fname"]);
     
-       if (!preg_match("/^[a-zA-Z ]*$/",$fname))
+       if (!preg_match("/^[a-zA-Z ]+$/",$fname))
           {
               $fname_error = "Only letters and white space allowed";
+              $anyError = true;
           }
     }
     if (empty($_POST["lname"]))
       {
         $lname_error = "Last name is required";
+        $anyError = true;
       }
     else
     {
       $lname = test_input($_POST["lname"]);
     
-       if (!preg_match("/^[a-zA-Z ]*$/",$lname))
+       if (!preg_match("/^[a-zA-Z ]+$/",$lname))
           {
               $lname_error = "Only letters and white space allowed";
+              $anyError = true;
           }
     }
     if (empty($_POST["mobile"]))
          {
            $mobile_error = "Mobile no. is required";
+           $anyError = true;
          } 
      else {
            $mobile = test_input($_POST["mobile"]);
            // check if e-mail address is well-formed
-           if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$mobile))
+           if (!preg_match("/^[0-9]{10}$/i",$mobile))
               {
-               $mobile_error = "Invalid mobile number";
+               $mobile_error = "Only 10 digits mobile number";
+               $anyError = true;
               }
            }
     if (empty($_POST["email"]))
         {
          $email_error = "Email is required";
+         $anyError = true;
         }
     else
         {
@@ -55,25 +62,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
           if (!filter_var($email, FILTER_VALIDATE_EMAIL))
             {
               $email_error = "Invalid email format";
+              $anyError = true;
             }
         }
      
     if (empty($_POST["gender"]))
       {
         $gender_error = "Gender is required";
+        $anyError = true;
       }
     else
     {
       $gender = test_input($_POST["gender"]);
     
-       if (!preg_match("/^[a-zA-Z ]*$/",$gender))
+       if (!preg_match("/^[MFT]$/",$gender))
           {
-              $gender_error = "Only letters allowed";
+              $gender_error = "Only M/F/T allowed";
+              $anyError = true;
           }   
     }      
     if (empty($_POST["pass1"]))
       {
         $pass1_error = "Password is required";
+        $anyError = true;
       }
     else
     {
@@ -82,22 +93,25 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     if (empty($_POST["pass2"]))
       {
         $pass2_error = "Password is required";
+        $anyError = true;
       }
     else
     {
-        $pass2=test_input($_POST["pass1"]);
+        $pass2=test_input($_POST["pass2"]);
     }
- if($pass1==$pass2 AND $pass1!="" AND $pass2!="")
- {
-    $sql="INSERT INTO cust_details(Fname,Lname,Mobile,Email,Gender,Password) VALUES('$fname','$lname','$mobile','$email','$gender','$pass1')";
-    $result=mysqli_query($connect, $sql)or die(mysqli_error($connect));
-    $_SESSION['username']=$fname;
-    header("Location:index.html");   
- }
- else if($pass1!=$pass2)
- {
-     $_SESSION['message']="MISMATCH PASSWORD";
- }
+  if(!$anyError) {
+     if(strcmp($pass1,$pass2)==0 AND $pass1!="" AND $pass2!="" )
+     {
+        $sql="INSERT INTO cust_details(Fname,Lname,Mobile,Email,Gender,Password) VALUES('$fname','$lname','$mobile','$email','$gender','$pass1')";
+        $result=mysqli_query($connect, $sql)or die(mysqli_error($connect));
+        $_SESSION['username']=$fname;
+        header("Location:products.php");   
+     }
+     else if($pass1!=$pass2)
+     {
+         $_SESSION['message']="MISMATCH PASSWORD";
+     }
+  }
 }
 function test_input($data)
 {
