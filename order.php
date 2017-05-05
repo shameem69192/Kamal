@@ -98,23 +98,27 @@
 					</div>-->
 					<div>
 						<label>
+                                                        Quantity:
 							<input placeholder="Quantity" type="text" name="quantity" value="<?= $qnty?>" tabindex="2" >
                                                         <span class="error"><?= $qnty_error ?></span>
 						</label>
 					</div>
 					<div>
 						<label>
+                                                        Address:
 							<input placeholder="Address:" type="text" name="address" value="<?= $adr?>" tabindex="3" >
                                                         <span class="error"><?= $adr_error ?></span>
 						</label>
 					</div>
 					<div>
 						<label>
+                                                    Phone:
                                                     <input placeholder="Phone/Mobile:" type="text" name="phone" value="<?= $phone?>" tabindex="4"  >
                                                     <span class="error"><?= $phone_error ?></span>
 						</label>
 					</div>					
 						<div>
+                                                    Payment type:
                                                     <input placeholder="Payment type" type="text" name="payment" value="<?= $payment?>" tabindex="5" >
                                                     <span class="error"><?= $payment_error ?></span>
 						</div>					
