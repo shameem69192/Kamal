@@ -32,11 +32,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $res=mysqli_query($connect,$qry)or die(mysqli_error($connect));
     if(mysqli_num_rows($res)==1)
     {
-      $fquery="SELECT Fname from cust_details WHERE Email='$email' AND Password='$pass1' ";
+      $fquery="SELECT Cust_id,Fname from cust_details WHERE Email='$email' AND Password='$pass1' ";
       $res=mysqli_query($connect,$fquery)or die(mysqli_error($connect));
 
       $_SESSION['message']="you are now logged in";
-      $_SESSION['username']=mysqli_fetch_assoc($res)["Fname"];
+      $row = mysqli_fetch_assoc($res);
+      $_SESSION['username']=$row["Fname"];
+      $_SESSION['id']=$row["Cust_id"];
       header("Location:products.php");
 
     }

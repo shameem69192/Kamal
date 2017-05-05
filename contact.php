@@ -42,7 +42,6 @@
 <!-- header -->
 
 <?php require('header.php'); ?>
-
 <div class="contact">
 	 <div class="container">
 		 <ol class="breadcrumb">
@@ -51,70 +50,58 @@
 		 </ol>
 		 <div class="contact-head">
 		 	 <h2>CONTACT</h2>
-			  <form>
+ <?php
+	if(isset($_POST['msg']) && isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['phone'])) {
+	$str = "Name : " . $_POST['name'] . "\n";
+	$str .= "Email : " . $_POST['email'] . "\n";
+	$str .= "Phone : " . $_POST['phone'] . "\n";
+	$str .= "\nMessage\n" . $_POST['msg'] . "\n";
+
+	require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+
+	$mail = new PHPMailer;
+
+	$mail->isSMTP();                                      // Set mailer to use SMTP
+	// $mail->SMTPDebug = 2;
+	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'kamalfurnitures01@gmail.com';                 // SMTP username
+	$mail->Password = 'mywork1133';                           // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 587;                                    // TCP port to connect to
+
+	$mail->setFrom('kamalfurnitures01@gmail.com', 'ContactUs');
+	$mail->addAddress('kamalfurnitures01@gmail.com', 'Kama Furnitures');     // Add a recipient
+	
+	$mail->Subject = 'Contact Us Form';
+	$mail->Body    = $str;
+	
+	if(!$mail->send()) {
+	    echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	    echo 'Message has been sent';
+	}
+
+	
+}
+?>
+
+			  <form action="#" method="POST">
 				  <div class="col-md-6 contact-left">
-						<input type="text" placeholder="Name" required/>
-						<input type="text" placeholder="E-mail" required/>
-						<input type="text" placeholder="Phone" required/>
+						<input type="text" placeholder="Name" name='name' required/>
+						<input type="text" placeholder="E-mail" name='email' required/>
+						<input type="text" placeholder="Phone" name='phone' required/>
 				 </div>
 				 <div class="col-md-6 contact-right">
-						 <textarea placeholder="Message"></textarea>
+						 <textarea placeholder="Message" name='msg'></textarea>
 						 <input type="submit" value="SEND"/>
 				 </div>
 				 <div class="clearfix"></div>
 			 </form>
 		 </div>
-		 
-<!---->
-<div class="footer-content">
-	 <div class="container">
-		 <div class="ftr-grids">
-			 <div class="col-md-3 ftr-grid">
-				 <h4>About Us</h4>
-				 <ul>
-					 <li><a href="#">Who We Are</a></li>
-					 <li><a href="contact.php">Contact Us</a></li>
-					 
-					
-					 <li><a href="#">Team</a></li>
-					 					 
-				 </ul>
-			 </div>
-			 
-			 <div class="col-md-3 ftr-grid">
-				 <h4>Your account</h4>
-				 <ul>
-					 <li><a href="account.html">Your Account</a></li>
-					 <li><a href="#">Personal Information</a></li>
-					 <li><a href="#">Addresses</a></li>
-					 
-					 					 					 
-				 </ul>
-			 </div>
-			 <div class="col-md-3 ftr-grid">
-				 <h4>Categories</h4>
-				 <ul>
-					 <li><a href="#">> Furinture</a></li>
-					 <li><a href="#">> Sofas</a></li>
-					 <li><a href="#">> Tables</a></li>
-					 <li><a href="#">> Beds</a></li>
-					 <li><a href="#">> Wardrobe</a></li>
-										 
-				 </ul>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
-</div>
-<!---->
 
-		 <div class="copywrite">
-			 <p>Copyright © 2017 Kamal Furnitures All rights reserved| Design by sss</p>
-		 </div>			 
-		 </div>
-	 </div>
-</div>
-<!---->
+<?php require 'footer.php'; ?>
 </body>
 </html>
 

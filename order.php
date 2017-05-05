@@ -40,7 +40,7 @@
 		 </ol>
 	 <div class="registration">
 		 <div class="registration_left">
-			 <h2>new user? <span> create an account </span></h2> 
+			 <h2>Order<span> place it </span></h2> 
 			 <script>
 				(function() {
 			
