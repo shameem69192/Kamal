@@ -14,7 +14,7 @@
 			 <div class="col-md-3 ftr-grid">
 				 <h4>Your account</h4>
 				  <ul>
-					 <li><a href="account.php">Your Account</a></li>
+					 <li><a href="myorders.php">Your Account</a></li>
 					 <li><a href="#">Personal Information</a></li>
 					 <li><a href="#">Addresses</a></li>
 					

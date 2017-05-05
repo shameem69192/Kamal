@@ -1,4 +1,4 @@
-<?php require 'account_process.php';
+<?php require 'place_order.php';
  ?>
 <!DOCTYPE HTML>
 <html>
@@ -79,51 +79,54 @@
 			
 			 })();
 			 </script>
-                         <?php
-                         if(isset($_SESSION['message']))
-                         {
-                          echo"<div id='error_msg'>".$_SESSION['message']."</div>";
-                          unset($_SESSION['message']);
-                         }
-                         ?>
+                       
 			 <div class="registration_form">
 			 <!-- Form -->
-                         <form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?> " method="post">
-					<!--<div>
-						<label>
-                                                    <input placeholder="Order_id" type="text" name="orderid" value="<?= $fname?>" tabindex="1"  >
-                                                    <span class="error"><?= $fname_error ?></span>
-                                                       
-						</label>
-					</div>-->
+			 <?php
+			 	if($anyError) {
+			 ?>
+			  <span class="error"><?= $messageHERE ?></span>
+			  <?php
+			} else {
+			  ?>
+			  <span class="error"><?= $messageHERE ?></span>
+
+			  <?php
+			}
+			  ?>
+                         <form id="registration_form" action="#" method="post">
 					<div>
 						<label>
+                                                    <input placeholder="Order_id" type="hidden" name="Order_id" value="<?= $orderID ?>" tabindex="1" >
+
+
+						</label>
+					</div>
+					<div>
+						<label>
+
                                                         Quantity:
-							<input placeholder="Quantity" type="text" name="quantity" value="<?= $qnty?>" tabindex="2" >
-                                                        <span class="error"><?= $qnty_error ?></span>
-						</label>
+							<input placeholder="Quantity" type="text" name="Quantity" value="1" tabindex="2" >
+                   	</label>
 					</div>
 					<div>
 						<label>
-                                                        Address:
-							<input placeholder="Address:" type="text" name="address" value="<?= $adr?>" tabindex="3" >
-                                                        <span class="error"><?= $adr_error ?></span>
-						</label>
+						        Address:
+							<input placeholder="Address:" type="text" name="Address" value=""  tabindex="3" >
+                    	</label>
 					</div>
 					<div>
 						<label>
-                                                    Phone:
-                                                    <input placeholder="Phone/Mobile:" type="text" name="phone" value="<?= $phone?>" tabindex="4"  >
-                                                    <span class="error"><?= $phone_error ?></span>
-						</label>
-					</div>					
+                                                Phone:
+                                                        <input placeholder="Phone/Mobile:" type="text" name="Phone" value="<?= $phone?>" tabindex="4"  >
+                    	</label>
+					</div>
 						<div>
                                                     Payment type:
-                                                    <input placeholder="Payment type" type="text" name="payment" value="<?= $payment?>" tabindex="5" >
-                                                    <span class="error"><?= $payment_error ?></span>
-						</div>					
-										
-						
+                                                    <input placeholder="Payment type" type="text" name="Payment_type" value="" placeholder="(cheque/cash/card)" tabindex="5" >
+                    	</div>
+
+
 					<div>
 						<input type="submit" value="order" id="register-submit">
                                  	</div>
