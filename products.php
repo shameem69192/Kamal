@@ -68,8 +68,9 @@
 										<h4>Out Of Stock</h4>
 										<?php	
 									} else if(isset($_SESSION['username']) ) {
-								?>		
-								<input type="button" class="item_add items" value="Buy Now">
+								?>	
+								<a href="order.php?orderid=<?= $row['Item_id']; ?>" class="item_add items" >Buy Now</a>
+									
 								<?php
 									} else {
 								?>
