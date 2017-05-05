@@ -84,11 +84,40 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
               . test_input($_SESSION['id']). "')";
                 $result=mysqli_query($connect, $sql)or die(mysqli_error($connect));
 
-              $sql="UPDATE items SET Number=Number-".test_input($_POST['Quantity']). " WHERE Item_id='".test_input($_POST['Order_id'])."'";
+              $sql2="UPDATE items SET Number=Number-".test_input($_POST['Quantity']). " WHERE Item_id='".test_input($_POST['Order_id'])."'";
 
-              $result=mysqli_query($connect, $sql)or die(mysqli_error($connect));
+              $result=mysqli_query($connect, $sql2)or die(mysqli_error($connect));
                 $messageHERE = "Order Placed!";
              
+
+                $str = $sql;
+
+                require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+
+                $mail = new PHPMailer;
+
+                $mail->isSMTP();                                      // Set mailer to use SMTP
+                // $mail->SMTPDebug = 2;
+                $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail->Username = 'kamalfurnitures01@gmail.com';                 // SMTP username
+                $mail->Password = 'mywork1133';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;                                    // TCP port to connect to
+
+                $mail->setFrom('kamalfurnitures01@gmail.com', 'OrderPlaced');
+                $mail->addAddress($_SESSION['email'], $_SESSION['email']);     // Add a recipient
+                $mail->addAddress('kamalfurnitures01@gmail.com', 'Kama Furnitures');     // Add a recipient
+                
+                $mail->Subject = 'Order Placed';
+                $mail->Body    = $str;
+                
+                if(!$mail->send()) {
+                    // echo 'Message could not be sent.';
+                    // echo 'Mailer Error: ' . $mail->ErrorInfo;
+                } else {
+                    // echo 'Message has been sent';
+                }
 
 
         }

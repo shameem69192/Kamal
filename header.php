@@ -13,7 +13,7 @@
 					<?php
 						if(isset($_SESSION['username'])) {
 					?>
-					<li class="top_link"><a href="login.php">My Account</a></li>	
+					<li class="top_link"><a href="myorders.php">My Account</a></li>	
 					<?php
 						}
 					?>			
