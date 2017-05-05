@@ -1,6 +1,5 @@
 <?php require 'account_process.php';
- //require 'account_login.php';
-?>
+ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,8 +13,7 @@
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Furnyish Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="Kamal Furnitures online store,Furniture store,Customized furniture online,furniture web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
@@ -42,14 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </ol>
 	 <div class="registration">
 		 <div class="registration_left">
-			 <h2>new user? <span> create an account </span></h2>
-			 <!-- [if IE] 
-				< link rel='stylesheet' type='text/css' href='ie.css'/>  
-			 [endif] -->  
-			  
-			 <!-- [if lt IE 7]>  
-				< link rel='stylesheet' type='text/css' href='ie6.css'/>  
-			 <! [endif] -->  
+			 <h2>new user? <span> create an account </span></h2> 
 			 <script>
 				(function() {
 			
@@ -146,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>i agree to mobilya.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
 					</div>-->
 				</form>
-				<!-- /Form -->
+				
 			 </div>
 		 </div>
           
@@ -199,13 +190,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="copywrite">
 			 <p>Copyright © 2017 Kamal Furnitures All rights reserved | Design by sss</p>
 		 </div>			 
-		 </div>
-	 </div>
-</div>
-<!---->
 </body>
 </html>
 
-
-</body>
-</html>

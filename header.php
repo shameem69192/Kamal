@@ -9,7 +9,7 @@
 			</div>
 			<div class="top_left">
 				<ul>
-					<li class="top_link">Email-Us: <a href="mailto:kamalfurnitures@gmail.com">kamalfurnitures@gmail.com</a></li>
+					<li class="top_link">Email-Us: <a href="mailto:kamalfurnitures01@gmail.com">kamalfurnitures01@gmail.com</a></li>
 					<?php
 						if(isset($_SESSION['username'])) {
 					?>

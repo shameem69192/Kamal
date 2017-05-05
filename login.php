@@ -15,8 +15,7 @@
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Furnyish Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="Kamal Furnitures online store,Furniture store,Customized furniture online,furniture web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
@@ -27,7 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="js/menu_jquery.js"></script>
 <script src="js/simpleCart.min.js"> </script>
-  
+
 </head>
 <body>
 
@@ -47,27 +46,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           unset($_SESSION['message']);
                          }
                          ?>
-		 <div class="col-md-6 log">			 
+		 <div class="col-md-6 log">
 				 <p>Welcome, please enter the filling to continue.</p>
-				 <!--<p>If you have previously Login with us, <span>click here</span></p>-->
-                                 <form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?> " method="post">
+				 <form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?> " method="post">
                                      <div>
                                          <label>
-                                         <!--<h5>Email:</h5>-->
                                          <input placeholder="Email:" type="text" name="email" value="<?=$email?>" tabindex="1">
                                          <span class="error"><?= $email_error ?></span>
                                          </label>
-                                     </div>    
+                                     </div>
                                      <div>
                                          <label>
-					 <!--<h5>Password:</h5>-->
-                                         <input placeholder="Password:" type="password" name="pass1" tabindex="2">	
+					 <input placeholder="Password:" type="password" name="pass1" tabindex="2">
                                          <span class="error"><?= $pass1_error ?></span>
                                          </label>
                                      </div>
 					 <input type="submit" value="Login">
-					  <a href="#">Forgot Password ?</a>
-				 </form>				 
+				 </form>
 		 </div>
 		  <div class="col-md-6 login-right">
 			  	<h3>NEW REGISTRATION</h3>
@@ -86,19 +81,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <ul>
 					 <li><a href="#">Who We Are</a></li>
 					 <li><a href="contact.php">Contact Us</a></li>
-					 
+
 					 <li><a href="#">Team</a></li>
-					 					 
+
 				 </ul>
 			 </div>
-			 
+
 			 <div class="col-md-3 ftr-grid">
 				 <h4>Your account</h4>
 				 <ul>
 					 <li><a href="account.html">Your Account</a></li>
 					 <li><a href="#">Personal Information</a></li>
 					 <li><a href="#">Addresses</a></li>
-					 				 					 
+
 				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
@@ -109,24 +104,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="#">> Tables</a></li>
 					 <li><a href="#">> Beds</a></li>
 					 <li><a href="#">> Wardrobe</a></li>
-					 					 
+
 				 </ul>
 			 </div>
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
 </div>
-<!---->
-	 
+
 		 <div class="copywrite">
 			 <p>Copyright © 2017 kamal Furnitures All rights reserved| Design by sss</p>
-		 </div>			 
-		 
-	 
+		 </div>
 
-<!---->
-</body>
-</html>
+
 
 
 </body>

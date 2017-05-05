@@ -12,8 +12,7 @@
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Furnyish Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="Kamal Furnitures online store,Furniture store,Customized furniture online,furniture web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
@@ -519,48 +518,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>
 	 </div>
 </div>
-<!---->
-
-<!--<div class="footer">
-	 <div class="container">
-		 <div class="store">
-			 <ul>
-				 <li class="active">OUR STORE LOCATOR::</li>
-				 <li><a href="#">Noida</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Belgium</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">China</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Germany</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Japan</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Armenia</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">South Africa</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Malaysia</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Indonesia</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Mumbai</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Portugal</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Spain</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Northern Ireland</a></li>	
-				 <li><a href="#">|</a></li>				 
-				 <li><a href="#">Mohali</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Gurgaon</a></li>
-				 <li><a href="#">|</a></li>
-				 <li><a href="#">Panchkula</a></li>
-				 <li><a href="#">|</a></li>				 
-				 <li><a href="#">Ambala</a></li>	
-			 </ul>
-		 </div>	-->	 
 		 <div class="copywrite">
 			 <p>Copyright © 2017 kamal Furnitures All rights reserved | Design by sss</p>
 		 </div>			 

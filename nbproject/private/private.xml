@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/KF_web/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/KF_web/contact.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/header.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/dbConnection.php</file>
             <file>file:/C:/xampp/htdocs/KF_web/account_login.php</file>
-            <file>file:/C:/xampp/htdocs/KF_web/index.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/logout.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/products.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/account.php</file>
+            <file>file:/C:/xampp/htdocs/KF_web/login.php</file>
         </group>
     </open-files>
 </project-private>
