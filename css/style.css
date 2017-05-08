@@ -379,6 +379,11 @@ a i.google:hover {
   border-bottom: 1px solid #eee;
   padding-bottom: 2em;
 }
+.final
+{
+    color: #026466;
+	font-family: 'Aladin', cursive;
+}
 .new{
 	margin:3em 0;
 	

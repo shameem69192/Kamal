@@ -4,10 +4,13 @@
 		<div class="header_top-sec">
 			<div class="top_right">
 				<ul>
-					<li><a href="contact.php">Contact</a></li>
+					<li><a href="contact.php">Contact</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOU CAN CONTACT US ANY TIME FOR CUSTOMIZED FURNITURES
 				</ul>
 			</div>
 			<div class="top_left">
+
 				<ul>
 					<li class="top_link">Email-Us: <a href="mailto:kamalfurnitures01@gmail.com">kamalfurnitures01@gmail.com</a></li>
 					<?php

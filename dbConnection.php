@@ -1,7 +1,7 @@
 <?php 
-define ('SERVER_ADDRESS' ,'192.168.0.108');
+define ('SERVER_ADDRESS' ,'localhost');
 define ('USER_NAME' ,'root');
-define ('PASSWORD' ,'9999');
+define ('PASSWORD' ,'');
 define ('DATABASE' ,'usr');
 
 

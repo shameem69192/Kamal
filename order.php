@@ -97,39 +97,40 @@
                          <form id="registration_form" action="#" method="post">
 					<div>
 						<label>
-                                                    <input placeholder="Order_id" type="hidden" name="Order_id" value="<?= $orderID ?>" tabindex="1" >
-
-
+                        <input placeholder="Order_id" type="hidden" name="Order_id" value="<?= $orderID ?>" tabindex="1" >
 						</label>
 					</div>
 					<div>
 						<label>
-
-                                                        Quantity:
-							<input placeholder="Quantity" type="text" name="Quantity" value="1" tabindex="2" >
+                        Quantity:
+					    <input placeholder="Quantity" type="text" name="Quantity" value="1" tabindex="2" >
                    	</label>
 					</div>
 					<div>
 						<label>
-						        Address:
-							<input placeholder="Address:" type="text" name="Address" value=""  tabindex="3" >
+						Address:
+						<input placeholder="Address:" type="text" name="Address" value=""  tabindex="3" >
                     	</label>
 					</div>
 					<div>
 						<label>
-                                                Phone:
-                                                        <input placeholder="Phone/Mobile:" type="text" name="Phone" value="<?= $phone?>" tabindex="4"  >
+                        Phone:
+                        <input placeholder="Phone/Mobile:" type="text" name="Phone" value="<?= $phone?>" tabindex="4"  >
                     	</label>
 					</div>
 						<div>
-                                                    Payment type:
-                                                    <input placeholder="Payment type" type="text" name="Payment_type" value="" placeholder="(cheque/cash/card)" tabindex="5" >
+                            Payment type:<br>
+                            <!-- <input placeholder="Payment type" type="text" name="Payment_type" value="" placeholder="(cheque/cash/card)" tabindex="5" >-->
+                    	    <select name="Payment_type">
+                    	    	<option value="cash">Cash</option>
+                    	    	<option value="card">Card</option>
+                    	    	<option value="cheque">Cheque</option>
+                    	    </select>
                     	</div>
-
 
 					<div>
 						<input type="submit" value="order" id="register-submit">
-                                 	</div>
+                    </div>
 					
 				</form>
 				

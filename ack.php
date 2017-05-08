@@ -1,15 +1,8 @@
-<?php
-session_start();
-require('dbConnection.php');
-if(!isset($_SESSION['id'])) {
-	header("Location: index.php");
-	exit(0);
-}
-?>
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Kamal Furnitures</title>
+<title>Kamal furnitures</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
 <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
@@ -30,41 +23,19 @@ if(!isset($_SESSION['id'])) {
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="js/menu_jquery.js"></script>
 <script src="js/simpleCart.min.js"> </script>
-<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
-
   
 </head>
 <body>
+
+
 <?php require('header.php'); ?>
-<div class="container">
-	<div class="final">
-	<h2>Your details:</h2><br>
-</div>
-First name: <?=$_SESSION['username']?><br>
-Last name: <?=$_SESSION['lname']?><br>
-Email: <?=$_SESSION['email']?><br>
-Mobile: <?=$_SESSION['phone']?><br>
-<br>
-<div class="final">
-	<h2>Your Orders:</h2><br>
+
+	 <div class="final"><br><br><br><br><br><br><br><br>
+          <h1><center>THANK YOU FOR ORDERING</center></h1>
+          <h3><center>We will respond to you within 24 hrs</center></h3>
+          <br><br><br><br><br><br><br><br>
 </div>
 
-
-
-
-<?php
-	$qry="SELECT Order_id,Quantity,Phone,Address,Payment_type,Cust_id from order_details where Cust_id='".$_SESSION['id']."'";
-	$result=mysqli_query($connect,$qry)or die(mysqli_error($connect));
- 
-	while($row = mysqli_fetch_assoc($result))  {
-		echo "Order id: ".$row['Order_id']."<br>Quantity: ".$row['Quantity']."<br>Phone: ".$row['Phone']."<br>Address: ".$row['Address'].
-		"<br>Payment type: ".$row['Payment_type']."<br>";
-		echo"-----------------------------------------------------------------------------------------------------------------------------
-		-------------------------------------<br>";
-	}
-	?>
-</div>
-
-<?php require 'footer.php'; ?>
+<?php require 'footer.php'; ?>		 
 </body>
 </html>

@@ -73,8 +73,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
           $messageHERE = "Quantity Out of Stock";
         } else {
 
-
-
              $sql="INSERT INTO order_details(Order_id,Quantity,Phone,Address,Payment_type,Cust_id) VALUES('"
               . test_input($_POST['Order_id']) . "','"
               . test_input($_POST['Quantity']) . "','"
@@ -106,11 +104,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 $mail->Port = 587;                                    // TCP port to connect to
 
                 $mail->setFrom('kamalfurnitures01@gmail.com', 'OrderPlaced');
-                $mail->addAddress($_SESSION['email'], $_SESSION['email']);     // Add a recipient
                 $mail->addAddress('kamalfurnitures01@gmail.com', 'Kama Furnitures');     // Add a recipient
                 
                 $mail->Subject = 'Order Placed';
-                $mail->Body    = $str;
+                $mail->Body    = "Order palced by ".test_input($_SESSION['username'])." for item: ".test_input($_POST['Order_id'])."\n".
+                                  "Quantity:".test_input($_POST['Quantity'])."\n"."Phone:".test_input($_POST['Phone'])."\n".
+                                  "Address:".test_input($_POST['Address'])."\n"."Payment type:".test_input($_POST['Payment_type']);
                 
                 if(!$mail->send()) {
                     // echo 'Message could not be sent.';
@@ -118,7 +117,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 } else {
                     // echo 'Message has been sent';
                 }
+                $mail = new PHPMailer;
 
+                $mail->isSMTP();                                      // Set mailer to use SMTP
+                // $mail->SMTPDebug = 2;
+                $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail->Username = 'kamalfurnitures01@gmail.com';                 // SMTP username
+                $mail->Password = 'mywork1133';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;                                    // TCP port to connect to
+
+                $mail->setFrom('kamalfurnitures01@gmail.com', 'OrderPlaced');
+                $mail->addAddress($_SESSION['email'], $_SESSION['email']);     // Add a recipient
+
+                $mail->Subject = 'Order Received';
+                $mail->Body    ="Your order for item:".test_input($_POST['Order_id'])." has been received "."\n".
+                                "ORDER DETAILS:\n"."order id:".test_input($_POST['Order_id'])."\n"."Quantity:".test_input($_POST['Quantity'])
+                                ."\n"."Payment type:".test_input($_POST['Payment_type'])."\nwe will contact to you shortly ";
+                $mail->send();
+                header("Location:ack.php");
 
         }
 

@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
          } 
      else {
            $mobile = test_input($_POST["mobile"]);
-           // check if e-mail address is well-formed
+           
            if (!preg_match("/^[0-9]{10}$/i",$mobile))
               {
                $mobile_error = "Only 10 digits mobile number";
@@ -75,9 +75,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
       $gender = test_input($_POST["gender"]);
     
-       if (!preg_match("/^[MFT]$/",$gender))
+       if (!preg_match("/^[MFO]$/",$gender))
           {
-              $gender_error = "Only M/F/T allowed";
+              $gender_error = "Only M/F/O allowed";
               $anyError = true;
           }   
     }      

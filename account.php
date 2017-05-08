@@ -27,12 +27,9 @@
   
 </head>
 <body>
-<!-- header -->
-<!-- header -->
-
 
 <?php require('header.php'); ?>
-<!---->
+
 <div class="container">
 	  <ol class="breadcrumb">
 		  <li><a href="index.php">Home</a></li>
@@ -41,7 +38,7 @@
 	 <div class="registration">
 		 <div class="registration_left">
 			 <h2>new user? <span> create an account </span></h2> 
-			 <script>
+			<!-- <script>
 				(function() {
 			
 				// Create input element for testing
@@ -78,7 +75,7 @@
 				}
 			
 			 })();
-			 </script>
+			 </script>-->
                          <?php
                          if(isset($_SESSION['message']))
                          {
@@ -91,51 +88,49 @@
                          <form id="registration_form" action="<?= $_SERVER['PHP_SELF'];?> " method="post">
 					<div>
 						<label>
-                                                    <input placeholder="First name:" type="text" name="fname" value="<?= $fname?>" tabindex="1"  >
-                                                    <span class="error"><?= $fname_error ?></span>
+                            <input placeholder="First name:" type="text" name="fname" value="<?= $fname?>" tabindex="1"  >
+                            <span class="error"><?= $fname_error ?></span>
                                                        
 						</label>
 					</div>
 					<div>
 						<label>
 							<input placeholder="Last name:" type="text" name="lname" value="<?= $lname?>" tabindex="2" >
-                                                        <span class="error"><?= $lname_error ?></span>
+                            <span class="error"><?= $lname_error ?></span>
 						</label>
 					</div>
 					<div>
 						<label>
 							<input placeholder="Email address:" type="text" name="email" value="<?= $email?>" tabindex="3" >
-                                                        <span class="error"><?= $email_error ?></span>
+                            <span class="error"><?= $email_error ?></span>
 						</label>
 					</div>
 					<div>
 						<label>
-                                                    <input placeholder="Mobile:" type="text" name="mobile" value="<?= $mobile?>" tabindex="4"  >
-                                                    <span class="error"><?= $mobile_error ?></span>
+                            <input placeholder="Mobile:" type="text" name="mobile" value="<?= $mobile?>" tabindex="4"  >
+                            <span class="error"><?= $mobile_error ?></span>
 						</label>
 					</div>					
 						<div>
-                                                    <input placeholder="Gender:" type="text" name="gender" value="<?= $gender?>" tabindex="5" >
-                                                    <span class="error"><?= $gender_error ?></span>
+                            <input placeholder="Gender: M/F/O" type="text" name="gender" value="<?= $gender?>" tabindex="5" >
+                            <span class="error"><?= $gender_error ?></span>
+
 						</div>					
 					<div>
 						<label>
-                                                    <input placeholder="Password" type="password" name="pass1" tabindex="6" >
-                                                    <span class="error"><?= $pass1_error ?></span>
+                            <input placeholder="Password" type="password" name="pass1" tabindex="6" >
+                            <span class="error"><?= $pass1_error ?></span>
 						</label>
 					</div>						
 					<div>
 						<label>
-                                                    <input placeholder="Retype password" type="password" name="pass2" tabindex="7" >
-                                                    <span class="error"><?= $pass2_error ?></span>
+                            <input placeholder="Retype password" type="password" name="pass2" tabindex="7" >
+                            <span class="error"><?= $pass2_error ?></span>
 						</label>
 					</div>	
 					<div>
 						<input type="submit" value="create an account" id="register-submit">
-                                 	</div>
-					<!--<div class="sky-form">
-						<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>i agree to mobilya.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
-					</div>-->
+                    </div>
 				</form>
 				
 			 </div>

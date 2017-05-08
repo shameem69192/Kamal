@@ -5,7 +5,6 @@ if(isset($_SESSION['id'])) {
 	exit(0);
 }
 ?>
-?>
 <?php
  require 'account_login.php';
 ?>
