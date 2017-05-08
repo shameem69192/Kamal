@@ -2,7 +2,7 @@
 session_start();
 require('dbConnection.php');
 $fname_error=$lname_error=$email_error=$mobile_error=$gender_error=$pass1_error=$pass2_error="";
-$fname=$lname=$email=$mobile=$gender=$pass1=$pass2="";
+$fname=$lname=$email=$mobile=$gender=$pass1=$pass2=$errorMsg="";
 $anyError = false;
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
@@ -102,10 +102,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
   if(!$anyError) {
      if(strcmp($pass1,$pass2)==0 AND $pass1!="" AND $pass2!="" )
      {
+      $pass1=md5($pass1);
         $sql="INSERT INTO cust_details(Fname,Lname,Mobile,Email,Gender,Password) VALUES('$fname','$lname','$mobile','$email','$gender','$pass1')";
-        $result=mysqli_query($connect, $sql)or die(mysqli_error($connect));
-        $_SESSION['username']=$fname;
-        header("Location:products.php");   
+        $result=mysqli_query($connect, $sql);
+        if(!$result) {
+          $anyError = true;
+          $errorMsg =  mysqli_error($connect);
+        } else {
+          require 'dologin.php';
+          dologin($connect,$email);
+          // $_SESSION['username']=$fname;
+          // header("Location:products.php");   
+        }
      }
      else if($pass1!=$pass2)
      {

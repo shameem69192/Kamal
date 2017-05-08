@@ -1,5 +1,4 @@
-<?php require 'account_process.php';
- ?>
+<?php require 'account_process.php'; ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -79,9 +78,13 @@
                          <?php
                          if(isset($_SESSION['message']))
                          {
-                          echo"<div id='error_msg'>".$_SESSION['message']."</div>";
+                          echo"<div  class='error' id='error_msg'>".$_SESSION['message']."</div>";
                           unset($_SESSION['message']);
                          }
+                         if(isset($errorMsg))
+                         {
+                          echo"<div class='error' id='error_msg'>".$errorMsg."</div>";
+                      	}
                          ?>
 			 <div class="registration_form">
 			 <!-- Form -->

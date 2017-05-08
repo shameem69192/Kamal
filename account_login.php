@@ -27,22 +27,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $pass1=test_input($_POST["pass1"]);
     }    
-
+    $pass1=md5($pass1);
     $qry="SELECT * from cust_details WHERE Email='$email' AND Password='$pass1' ";
     $res=mysqli_query($connect,$qry)or die(mysqli_error($connect));
     if(mysqli_num_rows($res)==1)
     {
-      $fquery="SELECT Mobile,Cust_id,Fname,Email,Lname from cust_details WHERE Email='$email' AND Password='$pass1' ";
-      $res=mysqli_query($connect,$fquery)or die(mysqli_error($connect));
+      require 'dologin.php';
+      dologin($connect,$email);
+      // $fquery="SELECT Mobile,Cust_id,Fname,Email,Lname from cust_details WHERE Email='$email' ";
+      // $res=mysqli_query($connect,$fquery)or die(mysqli_error($connect));
 
-      $_SESSION['message']="you are now logged in";
-      $row = mysqli_fetch_assoc($res);
-      $_SESSION['username']=$row["Fname"];
-      $_SESSION['phone']=$row["Mobile"];
-      $_SESSION['id']=$row["Cust_id"];
-      $_SESSION['email']=$row["Email"];
-      $_SESSION['lname']=$row["Lname"];
-      header("Location:products.php");
+      // $_SESSION['message']="you are now logged in";
+      // $row = mysqli_fetch_assoc($res);
+      // $_SESSION['username']=$row["Fname"];
+      // $_SESSION['phone']=$row["Mobile"];
+      // $_SESSION['id']=$row["Cust_id"];
+      // $_SESSION['email']=$row["Email"];
+      // $_SESSION['lname']=$row["Lname"];
+      // header("Location:products.php");
 
     }
     else
